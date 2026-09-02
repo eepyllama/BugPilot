@@ -57,7 +57,7 @@ async def health_check():
     )
 
 
-@app.post("/api/analyze", response_model=AnalysisResponse, responses={
+@app.post("/analyze", response_model=AnalysisResponse, responses={
     400: {"model": ErrorResponse},
     500: {"model": ErrorResponse},
     503: {"model": ErrorResponse},

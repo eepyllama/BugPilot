@@ -21,7 +21,7 @@ const MODES = [
   },
 ];
 
-export default function AnalysisModes({ mode, onModeChange, provider = 'llama-70b', onProviderChange }) {
+export default function AnalysisModes({ mode, onModeChange, provider = 'llama-3.1-8b-instant', onProviderChange }) {
   return (
     <div className="space-y-6">
       {/* Analysis Mode Selection */}
@@ -57,16 +57,10 @@ export default function AnalysisModes({ mode, onModeChange, provider = 'llama-70
           </label>
           <div className="flex gap-3">
             <button
-              className={`px-4 py-2 rounded-md border text-sm font-semibold transition-colors ${provider === 'llama-70b' ? 'bg-accent-primary border-accent-primary text-white' : 'bg-bg-secondary border-border-primary text-text-secondary hover:border-text-tertiary'}`}
-              onClick={() => onProviderChange('llama-70b')}
+              className={`px-4 py-2 rounded-md border text-sm font-semibold transition-colors bg-accent-primary border-accent-primary text-white`}
+              onClick={() => onProviderChange('llama-3.1-8b-instant')}
             >
               LLaMA 3.1 8B (Groq)
-            </button>
-            <button
-              className={`px-4 py-2 rounded-md border text-sm font-semibold transition-colors ${provider === 'llama-8b' ? 'bg-accent-primary border-accent-primary text-white' : 'bg-bg-secondary border-border-primary text-text-secondary hover:border-text-tertiary'}`}
-              onClick={() => onProviderChange('llama-8b')}
-            >
-              Qwen 2.5 Coder (OpenRouter)
             </button>
           </div>
         </div>

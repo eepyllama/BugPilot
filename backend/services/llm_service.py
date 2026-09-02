@@ -222,8 +222,8 @@ class LLMService:
             result.is_demo = False
             return result
 
-        # Determine primary model based on client preference (defaulting to LLaMA 3.3 70B if unspecified)
-        primary_model = "llama-3.1-8b-instant" if provider == "llama-8b" else "llama-3.3-70b-versatile"
+        # Hardcode primary model
+        primary_model = "llama-3.1-8b-instant"
         fallback_model = "qwen/qwen-2.5-coder-32b-instruct"
 
         last_error = None
