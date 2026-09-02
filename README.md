@@ -1,6 +1,6 @@
 # 🐛 BugPilot — AI Bug Diagnosis & Debugging Assistant
 
-"Check it out! :*  https://bug-pilot-five.vercel.app/
+"*Check it out! : **  https://bug-pilot-five.vercel.app/
 
 **Turn confusing errors into actionable fixes.**
 
