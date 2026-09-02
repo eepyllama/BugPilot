@@ -131,5 +131,12 @@ def build_user_prompt(error: str, code: str | None, logs: str | None,
 
 def get_system_prompt(mode: str) -> str:
     """Get the full system prompt for the given analysis mode."""
-    mode_instruction = MODE_INSTRUCTIONS.get(mode, MODE_INSTRUCTIONS["deep"])
+    # Explicitly match the exact string sent by the frontend ("beginner"), with safe fallback
+    if mode == "beginner":
+        mode_instruction = MODE_INSTRUCTIONS["beginner"]
+    elif mode == "quick":
+        mode_instruction = MODE_INSTRUCTIONS["quick"]
+    else:
+        mode_instruction = MODE_INSTRUCTIONS["deep"]
+        
     return SYSTEM_PROMPT + mode_instruction

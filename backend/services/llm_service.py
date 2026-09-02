@@ -182,7 +182,10 @@ class LLMService:
         logs = _truncate(logs, MAX_LOGS_LENGTH)
         context = _truncate(context, MAX_CONTEXT_LENGTH)
 
-        system_prompt = get_system_prompt(mode)
+        # Safely fallback to deep mode if an unrecognized string is received
+        safe_mode = mode if mode in ["quick", "deep", "beginner"] else "deep"
+        
+        system_prompt = get_system_prompt(safe_mode)
         user_prompt = build_user_prompt(error, code, logs, language, context)
 
         async def _attempt_call(target_client: str, model_id: str):
