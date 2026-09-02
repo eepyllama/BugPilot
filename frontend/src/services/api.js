@@ -15,7 +15,7 @@ export async function analyzeBug({ error, code, logs, language, context, mode })
   const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout
 
   try {
-    const response = await fetch(`${API_BASE}/analyze`, {
+    const response = await fetch(`${API_BASE}/api/analyze`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error, code, logs, language, context, mode }),
@@ -58,9 +58,10 @@ export async function analyzeBug({ error, code, logs, language, context, mode })
  */
 export async function healthCheck() {
   try {
-    const response = await fetch(`${API_BASE}/health`, {
-      signal: AbortSignal.timeout(5000),
-    });
+    const response = await fetch(`${API_BASE}/api/health`,
+      {
+        signal: AbortSignal.timeout(5000),
+      });
     if (!response.ok) return { status: 'error', llm_configured: false };
     return await response.json();
   } catch {
