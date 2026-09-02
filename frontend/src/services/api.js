@@ -15,7 +15,7 @@ export async function analyzeBug({ error, code, logs, language, context, mode })
   const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout
 
   try {
-    const response = await fetch(`${API_BASE}/analyze`, {
+    const response = await fetch(`${API_BASE}/api/analyze`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ error, code, logs, language, context, mode }),
