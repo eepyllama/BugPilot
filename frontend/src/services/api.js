@@ -5,8 +5,8 @@
  * Falls back to mock data when the backend is unavailable.
  */
 
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8000";
-
+// This checks Vercel first, and if it fails, falls back to your hardcoded Render URL
+const API_BASE = import.meta.env.VITE_API_URL || "https://bugpilot-5jji.onrender.com";
 /**
  * Analyze a bug using the backend AI pipeline.
  */
