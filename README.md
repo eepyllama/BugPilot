@@ -1,5 +1,7 @@
 # 🐛 BugPilot — AI Bug Diagnosis & Debugging Assistant
 
+"Check it out! : * https://bug-pilot-five.vercel.app/
+
 **Turn confusing errors into actionable fixes.**
 
 BugPilot is a developer tool that analyzes stack traces, identifies root causes, and generates code fixes using AI. Unlike generic chatbots, BugPilot follows a structured debugging pipeline and returns structured diagnostic reports — not free-text responses.
